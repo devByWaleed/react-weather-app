@@ -1,0 +1,143 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  background: url('../public/weather.jpg') no-repeat center center/cover;
+  position: relative;
+  padding: 20px;
+  overflow: hidden;
+  text-align: center;
+}
+
+/* Blurred Background Overlay */
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: inherit;
+  filter: blur(8px);
+  z-index: -1;
+}
+
+/* Weather Container */
+.weather-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px;
+  width: 400px;
+  border-radius: 15px;
+  text-align: left;
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(20px);
+}
+
+.title {
+  text-align: center;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+/* Form Styling */
+#weather-form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  width: 100%;
+  margin-top: 10px;
+}
+
+/* Input Field */
+#city {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  outline: none;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.4);
+  border: transparent;
+  font-weight: bold;
+  color: white;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+#city::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+#city:focus {
+  border: 2px solid #007bff;
+  transform: scale(1.02);
+}
+
+/* Button Styling */
+button {
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: transform 0.3s ease, background 0.3s ease;
+  color: #fff;
+  background: linear-gradient(45deg, #007bff, #00c6ff);
+}
+
+button:hover {
+  transform: scale(1.1);
+  background: linear-gradient(45deg, #0056b3, #0096ff);
+}
+
+/* Weather Information Styling */
+.weather-details {
+  margin-top: 20px;
+}
+
+.weather-location {
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.weather-stats,
+.weather-conditions {
+  text-align: left;
+  padding-left: 15px;
+  font-size: 14px;
+}
+
+.conditions-heading {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .weather-container {
+    width: 90%;
+    padding: 30px;
+    margin: auto;
+  }
+
+  #city {
+    font-size: 14px;
+  }
+
+  button {
+    font-size: 14px;
+  }
+}
