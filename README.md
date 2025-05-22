@@ -18,7 +18,7 @@ A simple weather app made in React that display current weather conditions of th
 - **Transition Effect:** Apply the transition effect on hover.
 
 **Usage:**
-1. Access the weather application through the web browser. https://waleed1857.github.io/react-weather-app/
+1. Access the weather application through the web browser. https://devByWaleed.github.io/react-weather-app/
 2. Enter the city name.
 3. Get the fetched weather data.
 ---
