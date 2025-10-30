@@ -17,6 +17,11 @@ A simple weather app made in React that display current weather conditions of th
 - **Gradient Color:** Apply the gradient color.
 - **Transition Effect:** Apply the transition effect on hover.
 
+**React Specification**
+- **React Toastify:** Apply toastify package for attractive alert messages..
+
+
+
 **Usage:**
 1. Access the weather application through the web browser. https://devByWaleed.github.io/react-weather-app/
 2. Enter the city name.

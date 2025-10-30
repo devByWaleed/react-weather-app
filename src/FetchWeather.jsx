@@ -1,5 +1,6 @@
 // Importing Necessary Component
-import React, { useState } from "react";
+import { useState } from "react";
+import { toast } from 'react-toastify';
 
 function Display() {
   const apiKey = "3cb8cc9e1bcd4dcf91792013240609"; // Make sure this key is valid
@@ -7,7 +8,6 @@ function Display() {
   // States To Handle The Fetching
   const [value, setValue] = useState("");
   const [weatherData, setWeatherData] = useState(null);
-  const [errorMessage, setErrorMessage] = useState(null);
 
   // function To Fetch Data
   const fetchWeatherData = (event) => {
@@ -24,14 +24,12 @@ function Display() {
       .then((data) => {
         if (data.location) {
           setWeatherData(data); // Set the weather data
-          setErrorMessage(null); // Clear any previous error message
         } else {
-          setErrorMessage("City not found!!"); // Set error message for city not found
+          toast.error("City not found!!");  // Set error message for city not found
         }
       })
       .catch((error) => {
-        setErrorMessage(`Error while fetching data: ${error.message}`); // Set error message
-        console.log("Error while fetching data: ", error);
+        toast.error(`Error while fetching data: ${error.message}`);   // Set error message
       });
   };
 
@@ -50,7 +48,7 @@ function Display() {
         <button type="submit">Get Weather</button>
       </form>
       <div id="weather-info">
-        {errorMessage && <p className="error-message">{errorMessage}</p>}
+        {/* {errorMessage && <p className="error-message">{errorMessage}</p>} */}
         {weatherData && (
           <div className="weather-details">
             <img

@@ -1,5 +1,4 @@
 // Importing Necessary Components
-import React from "react";
 import Display from "./FetchWeather";
 
 // Function Component Of Weather App
